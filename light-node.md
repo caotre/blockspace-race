@@ -110,3 +110,6 @@ Check the logs:
 ```
 sudo journalctl -u celestia-lightd.service -f
 ```
+```
+My node ID https://tiascan.com/light-node/12D3KooWSpmuDUXYz1oKj4pj3zVU2UtfmCn8AqyeW4xfXBqJqGLD
+```

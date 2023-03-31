@@ -1,4 +1,6 @@
-Server: 1 CPU / 2 GB RAM / 5 GB SSD
+# Hardware requirements
+The following minimum hardware requirements are recommended for running a light node:
+>Memory: 2 GB RAM. CPU: Single Core. Disk: 5 GB SSD Storage. Bandwidth: 56 Kbps for Download/56 Kbps for Upload
 # Installation the light node
 1) Preparing the server
 ```
@@ -16,6 +18,13 @@ source ~/.bash_profile
 3) Check Go version: 
 ```
 go version
+```
+```
+Semantic version: v0.8.0 
+Commit: ef582655342c73384a66314972428b152227e428 
+Build Date: Thu Dec 15 10:19:22 PM UTC 2022 
+System version: amd64/linux 
+Golang version: go1.19.1 
 ```
 4) Download the binary file:
 ```

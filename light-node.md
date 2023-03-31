@@ -93,8 +93,8 @@ LimitNOFILE=4096
 WantedBy=multi-user.target
 EOF
 ```
-Tham số --metrics --metrics.endpoint otel.celestia.tools:4318 đã được thêm sẵn theo yêu cầu của task "Restart Your Node With Metrics Flags for Tracking Uptime"
-Start the node:
+Tham số --metrics --metrics.endpoint otel.celestia.tools:4318 đã được thêm sẵn theo yêu cầu của task "Restart Your Node With Metrics Flags for Tracking Uptime".
+  Start the node:
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable celestia-lightd

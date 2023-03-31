@@ -1,6 +1,9 @@
 # Phần cứng
 Cấu hình phần cứng yêu cầu tối thiểu:
 >Memory: 2 GB RAM. CPU: Single Core. Disk: 5 GB SSD Storage. Bandwidth: 56 Kbps for Download/56 Kbps for Upload
+
+  Link đăng ký VPS Hetzner ủng hộ em https://hetzner.cloud/?ref=fS54U43gi4aS 
+
 # Cài đặt light node
 Cài các thành phần cần thiết
 ```

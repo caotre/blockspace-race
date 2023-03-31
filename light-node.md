@@ -123,6 +123,16 @@ Check the logs:
 ```
 sudo journalctl -u celestia-lightd.service -f
 ```
+Kết quả logs
+```
+Mar 31 04:36:11 celestia-light-node celestia[21632]: 2023-03-31T04:36:11.325Z        INFO        header/store        store/store.go:353        new head        {"height": 133077, "hash": "E1BE949AE742384EFCD8DBDA2CEF164707741D6D3955ACF9694A192022783CB7"}
+Mar 31 04:36:11 celestia-light-node celestia[21632]: 2023-03-31T04:36:11.325Z        INFO        das        das/subscriber.go:35        new header received via subscription        {"height": 133077}
+Mar 31 04:36:11 celestia-light-node celestia[21632]: 2023-03-31T04:36:11.325Z        INFO        das        das/worker.go:80        finished sampling headers        {"from": 133077, "to": 133077, "errors": 0, "finished (s)": 0.000040406}
+Mar 31 04:36:14 celestia-light-node celestia[21632]: 2023-03-31T04:36:14.782Z        INFO        canonical-log        swarm/swarm_dial.go:500        CANONICAL_PEER_STATUS: peer=12D3KooWQgxUFfGUpyU7TKcUBx1qM2U6uAquA9oue2y7s3GaeWHR addr=/ip4/38.242.238.84/udp/2121/quic-v1 sample_rate=100 connection_status="established" dir="outbound"
+Mar 31 04:36:22 celestia-light-node celestia[21632]: 2023-03-31T04:36:22.033Z        INFO        header/store        store/store.go:353        new head        {"height": 133078, "hash": "609507791010EE48DAB643722A3342DA4266F429FF78232FC289296E03175E77"}
+Mar 31 04:36:22 celestia-light-node celestia[21632]: 2023-03-31T04:36:22.033Z        INFO        das        das/subscriber.go:35        new header received via subscription        {"height": 133078}
+Mar 31 04:36:22 celestia-light-node celestia[21632]: 2023-03-31T04:36:22.094Z        INFO        das        das/worker.go:80        finished sampling headers        {"from": 133078, "to": 133078, "errors": 0, "finished (s)": 0.060674562}
+```
 Tạo thêm một key cho node (thay your-key thành tên key bạn muốn)
 ```
 ./cel-key add your-key --keyring-backend test --node.type light --p2p.network blockspacerace

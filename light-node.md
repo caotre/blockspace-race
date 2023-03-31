@@ -75,7 +75,7 @@ Vào Discord kênh **#faucet** lấy token faucet theo format:
 ```
 $request celestia1hry8zs6260uwhsxxxxxxxx...
 ```  
-8) Tạo service file:
+Tạo service file:
 ```
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-lightd.service
 [Unit]

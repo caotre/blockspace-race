@@ -63,6 +63,14 @@ Kiểm tra list keys
 cd celestia-node
 ./cel-key list --node.type light --p2p.network blockspacerace
 ```
+Kết quả trả về
+```
+using directory:  /root/.celestia-light-blockspacerace-0/keys
+- address: celestia1hry8zs6260uwhsxxxxxxxx
+  name: my_celes_key
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A4w4fdojrqqyIoGpEgIQg2xDxxxx"}'
+  type: local
+```
 Vào Discord kênh **#faucet** lấy token faucet theo format:
 ```
 $request celestia1hry8zs6260uwhsxxxxxxxx...

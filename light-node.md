@@ -47,14 +47,15 @@ Initialize Light node
 ```
 celestia light init --p2p.network blockspacerace
 ```
-Celestia tự tạo một key tên là my_celes_key
+Celestia tự tạo một key tên là my_celes_key. Lưu cẩn thận thông tin mnemonic lại. Lưu folder keys trong .celestia-light-blockspacerace-0 cẩn thận.
+Địa chỉ ví Celestia của bạn là: celestia1hry8zs6260uwhsxxxxxxxx
 ```
 NAME: my_celes_key
 ADDRESS: celestia1hry8zs6260uwhsxxxxxxxx
 MNEMONIC (save this somewhere safe!!!): 
 xxx xxx xxx
 ```
-Kiểm tra list key
+Kiểm tra list keys
 ```
 cd celestia-node
 ./cel-key list --node.type light --p2p.network blockspacerace
@@ -81,6 +82,7 @@ LimitNOFILE=4096
 WantedBy=multi-user.target
 EOF
 ```
+Tham số --metrics --metrics.endpoint otel.celestia.tools:4318 đã được thêm sẵn theo yêu cầu của task "Restart Your Node With Metrics Flags for Tracking Uptime"
 Start the node:
 ```
 sudo systemctl daemon-reload

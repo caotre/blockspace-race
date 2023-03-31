@@ -50,7 +50,7 @@ Initialize Light node
 ```
 celestia light init --p2p.network blockspacerace
 ```
-Celestia tự tạo một key tên là my_celes_key. Lưu cẩn thận thông tin mnemonic lại. Lưu folder keys trong .celestia-light-blockspacerace-0 cẩn thận.
+Celestia tự tạo một key tên là my_celes_key. Lưu cẩn thận thông tin MNEMONIC lại. Lưu folder keys trong .celestia-light-blockspacerace-0 cẩn thận.
 Địa chỉ ví Celestia của bạn là: celestia1hry8zs6260uwhsxxxxxxxx
 ```
 NAME: my_celes_key
@@ -115,10 +115,10 @@ Check the logs:
 ```
 sudo journalctl -u celestia-lightd.service -f
 ```
-Tạo key cho node (thay your-key thành tên key bạn muốn)
+Tạo thêm một key cho node (thay your-key thành tên key bạn muốn)
 ```
 ./cel-key add your-key --keyring-backend test --node.type light --p2p.network blockspacerace
 ```
-Khôi phục một key đã tạo trước bằng nemonic (thay your-key thành tên key bạn muốn)
+Khôi phục một key đã tạo trước bằng MNEMONIC (thay your-key thành tên key bạn muốn)
 ```
 ./cel-key add your-key --keyring-backend test --node.type light --p2p.network blockspacerace --recover

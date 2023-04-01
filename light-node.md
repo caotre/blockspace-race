@@ -141,8 +141,8 @@ Khôi phục một key đã tạo trước bằng MNEMONIC (thay your-key thành
 ```
 ./cel-key add your-key --keyring-backend test --node.type light --p2p.network blockspacerace --recover
 ```
-# Cập nhật
-## Cập nhật v.8.0.1
+# Upgrade
+## Upgrade v0.8.1 
 Dừng serviced celestia-lightd
 ```
 sudo systemctl stop celestia-lightd

@@ -141,6 +141,31 @@ Khôi phục một key đã tạo trước bằng MNEMONIC (thay your-key thành
 ```
 ./cel-key add your-key --keyring-backend test --node.type light --p2p.network blockspacerace --recover
 ```
+Kiểm tra thông tin node
+```
+cel_nodeid=12D3KooWSpmuDUXYz1oKj4pj3zVU2UtfmCn8AqyeW4xxxxxxx
+curl -s https://leaderboard.celestia.tools/api/v1/nodes/$cel_nodeid | jq
+```
+```
+  "node_id": "12D3KooWSpmuDUXYz1oKj4pj3zVU2UtfmCn8AqyeW4xxxxxxx",
+  "node_type": 3,
+  "uptime": 99.994415,
+  "last_pfb_timestamp": "1970-01-01T00:00:00Z",
+  "pfb_count": 0,
+  "head": 143317,
+  "network_height": 143325,
+  "das_latest_sampled_timestamp": "2023-04-01T11:12:21Z",
+  "das_network_head": 143317,
+  "das_sampled_chain_head": 143317,
+  "das_sampled_headers_counter": 102,
+  "das_total_sampled_headers": 143317,
+  "total_synced_headers": 143316,
+  "start_time": "2023-03-31T02:31:18Z",
+  "last_restart_time": "2023-04-01T06:37:24Z",
+  "node_runtime_counter_in_seconds": 16499,
+  "last_accumulative_node_runtime_counter_in_seconds": 102312,
+  "node_type_str": "Celestia-Light"
+```
 # Upgrade
 ## Upgrade v0.8.1 
 Dừng serviced celestia-lightd

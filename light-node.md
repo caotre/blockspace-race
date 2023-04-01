@@ -155,6 +155,7 @@ git checkout tags/v0.8.1
 make build 
 make install
 ```
+Xoá các folder blocks, index, data, transients chứa data của bản cũ
 ```
 cd $HOME
 cd .celestia-light-blockspacerace-0

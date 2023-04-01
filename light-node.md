@@ -28,7 +28,7 @@ cd $HOME
 rm -rf celestia-node 
 git clone https://github.com/celestiaorg/celestia-node.git 
 cd celestia-node/ 
-git checkout tags/v0.8.0 
+git checkout tags/v0.8.1
 make build 
 make install 
 make cel-key
@@ -140,3 +140,39 @@ Tạo thêm một key cho node (thay your-key thành tên key bạn muốn)
 Khôi phục một key đã tạo trước bằng MNEMONIC (thay your-key thành tên key bạn muốn)
 ```
 ./cel-key add your-key --keyring-backend test --node.type light --p2p.network blockspacerace --recover
+```
+# Cập nhật
+## Cập nhật v.8.0.1
+Dừng serviced celestia-lightd
+```
+sudo systemctl stop celestia-lightd
+```
+Cập nhật bản mới
+```
+cd celestia-node/ 
+git fetch
+git checkout tags/v0.8.1 
+make build 
+make install
+```
+```
+cd $HOME
+cd .celestia-light-blockspacerace-0
+sudo rm -rf blocks index data transients
+```
+init lại light node, keyring ở bản trước đã được tạo nên lần init này celestia-node sẽ không tạo lại keyring
+```
+celestia light init --p2p.network blockspacerace
+```
+```
+2023-04-01T06:35:33.082Z        INFO    node    nodebuilder/init.go:29  Initializing Light Node Store over '/root/.celestia-light-blockspacerace-0'
+2023-04-01T06:35:33.082Z        INFO    node    nodebuilder/init.go:61  Saved config    {"path": "/root/.celestia-light-blockspacerace-0/config.toml"}
+2023-04-01T06:35:33.082Z        INFO    node    nodebuilder/init.go:63  Accessing keyring...
+2023-04-01T06:35:33.088Z        WARN    node    nodebuilder/init.go:135 Detected plaintext keyring backend. For elevated security properties, consider using the `file` keyring backend
+```
+Khởi động lại serviced
+```
+sudo systemctl restart celestia-lightd
+sudo journalctl -u celestia-lightd -f
+```
+Khi xóa các thư mục "blocks index data transients" ở trên, các blocks của chain phải đồng bộ  lại, do đó bạn sẽ thấy thời gian hoạt động uptime score bằng 0, cho đến khi dữ liệu được đồng bộ lại, khi đó thời gian hoạt động của node của bạn sẽ giống như trước khi nâng cấp. Điều này là bình thường và không có gì phải lo lắng.

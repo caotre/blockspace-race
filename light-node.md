@@ -175,4 +175,12 @@ Khởi động lại serviced
 sudo systemctl restart celestia-lightd
 sudo journalctl -u celestia-lightd -f
 ```
+```
+Apr 01 06:43:46 celestia-light-node celestia[43876]: 2023-04-01T06:43:46.348Z        INFO        header/store        store/store.go:353        new head        {"height": 105473, "hash": "B97463724AF1E6237535142ABB840870C5AD177B34EC120B3BADF3C4919FE42E"}
+Apr 01 06:43:46 celestia-light-node celestia[43876]: 2023-04-01T06:43:46.350Z        INFO        das        das/worker.go:80        finished sampling headers        {"from": 105102, "to": 105201, "errors": 0, "finished (s)": 6.936235622}
+Apr 01 06:43:46 celestia-light-node celestia[43876]: 2023-04-01T06:43:46.350Z        INFO        das        das/worker.go:80        finished sampling headers        {"from": 104902, "to": 105001, "errors": 0, "finished (s)": 9.652704919}
+Apr 01 06:43:46 celestia-light-node celestia[43876]: 2023-04-01T06:43:46.350Z        INFO        das        das/worker.go:80        finished sampling headers        {"from": 105202, "to": 105301, "errors": 0, "finished (s)": 6.936106781}
+Apr 01 06:43:46 celestia-light-node celestia[43876]: 2023-04-01T06:43:46.350Z        INFO        das        das/worker.go:80        finished sampling headers        {"from": 105302, "to": 105401, "errors": 0, "finished (s)": 6.936054723}
+Apr 01 06:43:46 celestia-light-node celestia[43876]: 2023-04-01T06:43:46.351Z        INFO        das        das/worker.go:80        finished sampling headers        {"from": 105002, "to": 105101, "errors": 0, "finished (s)": 6.937365918}
+```
 Khi xóa các thư mục "blocks index data transients" ở trên, các blocks của chain phải đồng bộ  lại, do đó bạn sẽ thấy thời gian hoạt động uptime score bằng 0, cho đến khi dữ liệu được đồng bộ lại, khi đó thời gian hoạt động của node của bạn sẽ giống như trước khi nâng cấp. Điều này là bình thường và không có gì phải lo lắng.

@@ -210,3 +210,24 @@ Apr 01 06:43:46 celestia-light-node celestia[43876]: 2023-04-01T06:43:46.350Z   
 Apr 01 06:43:46 celestia-light-node celestia[43876]: 2023-04-01T06:43:46.351Z        INFO        das        das/worker.go:80        finished sampling headers        {"from": 105002, "to": 105101, "errors": 0, "finished (s)": 6.937365918}
 ```
 Khi xóa các thư mục "blocks index data transients" ở trên, các blocks của chain phải đồng bộ  lại, do đó bạn sẽ thấy thời gian hoạt động uptime score bằng 0, cho đến khi dữ liệu được đồng bộ lại, khi đó thời gian hoạt động của node của bạn sẽ giống như trước khi nâng cấp. Điều này là bình thường và không có gì phải lo lắng.
+
+## Submit a PayForBlob Transaction 
+Chạy đoạn lệnh sau, các thông số có thể giữ nguyên
+```
+curl -X POST -d '{"namespace_id": "0c204d39600fddd3",
+  "data": "f1f20ca8007e910a3bf8b2e61da0f26bca07ef78717a6ea54165f5",
+  "gas_limit": 80000, "fee": 2000}' http://localhost:26659/submit_pfb
+```
+Kết quả trả về, bạn tìm txhash dán vào https://testnet.mintscan.io/celestia-incentivized-testnet để kiểm tra. Nếu trạng thái là Success thì giao dịch đã thành công. Bạn paste txhash này vào Knack để submit.
+```
+{
+  "height": 228395,
+  "txhash": "59BF70BAF216A424AC77143F95E4118D532A654170BC5D216646D21E895CAxxx9",
+  "data": "122A0A282F63656C65737469612E626C6F622E76312E4D7367506179466F72426C6F6273526573706F6E7365",
+  "raw_log": "[{\"msg_index\":0,\"events\":[{\"type\":\"celestia.blob.v1.EventPayForBlobs\",\"attributes\":[{\"key\":\"blob_sizes\",\"value\":\"[27]\"},{\"key\":\"namespace_ids\",\"value\":\"[\\\"DCBNOWAP3dM=\\\"]\"},{\"key\":\"signer\",\"value\":\"\\\"celestia1vdjkcetnw35kzvtgwfuns7nnxcervvr4wa58xdtvd4mkcdtjdqunvapndqcrw6nhx45rvvrdvaesevtcde\\\"\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"/celestia.blob.v1.MsgPayForBlobs\"}]}]}]",
+  "logs": [
+    {
+      "msg_index": 0,
+    }...
+}
+```
